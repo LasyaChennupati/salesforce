@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   <aura:attribute name="message" type="string"/>
+    <aura:attribute name="name" type="string"/>
+     <lightning:input type="text" value="{!v.name}"/>
+     <lightning:input type="text" value="{!v.message}"/>
+    
+    <aura:attribute name="baseDomain" type="String" default="lasyachennupati-dev-ed--c.ap4.visual.force.com"/>
+   
+    <iframe aura:id="vframe" src="{!'https://'+ v.baseDomain +'/apex/broadcastPage'}" frameborder="0" style="height:200px;"/>
+</aura:component>
